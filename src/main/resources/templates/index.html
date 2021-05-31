@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="//thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>| Lista Consumo</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<h1>Controle consumo chuveiro</h1>
+<h3><a href="/preencherCadastro" class="waves-effect waves-light btn"><i class="material-icons right">add_circle_outline</i>tela de cadastro</a></h3>
+
+<table>
+
+    <thead>
+    <tr>
+        <th>DATA</th>
+        <th>TEMPO</th>
+        <th>VALOR</th>
+        <th>CONSUMO</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="consumo : ${lista}">
+        <td><span th:text="${consumo.data}"></span></td>
+        <td><span th:text="${consumo.tempo}"></span></td>
+        <td>R$ <span th:text="${consumo.valor}"></span></td>
+        <td><span th:text="${consumo.consumo}"></span></td>
+    </tr>
+
+    </tbody>
+</table>
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="materialize-v1.0.0/materialize/js/materialize.min.js"></script>
+</body>
+</html>
